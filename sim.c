@@ -256,7 +256,7 @@ void simulate(void)
             setreg(reg, tr);
             break;
         case 0x03: /*IN*/
-            if((tr > COUNTOF(intab)) || !intab[tr]) die("no such input device");
+            if((tr >= COUNTOF(intab)) || !intab[tr]) die("no such input device");
             setreg(reg, intab[tr]());
             break;
         case 0x04: /*OUT*/
